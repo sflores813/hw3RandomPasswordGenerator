@@ -1,16 +1,31 @@
+/* works with the  password container */
+
 .content{
     margin: top= 10px;
     margin: bottom= 10px;
-    background-color: lightblue;
+    background-color: whitesmoke;
     padding: 20px;
     width: 100%;
 
 }
-
+/* length of the password bar */
 #display {
     width: 100%;
 }
-
+/* length of the slider bar*/
 #slider {
     width: 100%;
 }
+
+#length{
+    display:inline-block;
+    width: 100%px;
+}
+
+.previous_passwords{
+    margin bottom: 20px;
+    }
+
+    .h4{
+        color: white;
+    }

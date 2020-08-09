@@ -2,12 +2,12 @@
 function generate(){
 
     //set password length/complexity
-    let complexity = document.getElementById("slider").values;
+    var complexity = document.getElementById("slider").value;
     
     //possible password values
-    let values = "ABCDEFGHEIJKLMNOPQURSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
+    var values = "ABCDEFGHEIJKLMNOPQURSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890!@#$%^&*()_+";
 
-    let password = "";
+    var password = "";
 
     //create for loop to choose password characters
     for(var i = 0; i <= complexity; i++){
@@ -15,6 +15,34 @@ function generate(){
     }
 
     //adds password to the textbox/display area
-    document.getElementById("display").values = password;
+    document.getElementById("display").value = password;
+
+    //add oassword to previously generated passwords
+    document.getElementById("lastNums").innerHTML += password + "<br />";
+
+}
+
+// set default lengh display to 68
+    document.getElementById("length").innerHTML = "length:69";
+
+    //function for the length based of the slider loctation
+    document.getElementById("slider").oninput = function(){
+
+        if(document.getElementById("slider").value>0){
+            document.getElementById("length").innerHTML = "length:" + document.getElementById("slider").value;
+        }
+        else {
+            document.getElementById("length").innerHTML = "length:1";
+        }
+    }
+
+// function to copy too clip board
+function copyPassword(){
+
+    document.getElementById("display").select();
+
+    document.execCommand("Copy");
+
+    alert("The password was copied to your clipboard!");
 
 }
